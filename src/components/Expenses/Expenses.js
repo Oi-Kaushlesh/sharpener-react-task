@@ -1,21 +1,22 @@
-import Card from "./Card";
 import ExpenseItem from "./ExpenseItem";
-import "./Expenses.css"
+import "./Expenses.css";
+import Card from "../UI/Card";
 
 function Expenses(props) {
   return (
     <Card className="expenses">
-      {props.expenses.map((expense, index) => {
+      {props.expenses.map((expense) => {
         return (
           <ExpenseItem
             key={expense.id}
-            date={expense.date}
             title={expense.title}
+            date={expense.date}
             price={expense.price}
-          ></ExpenseItem>
+          />
         );
       })}
     </Card>
   );
 }
+
 export default Expenses;
