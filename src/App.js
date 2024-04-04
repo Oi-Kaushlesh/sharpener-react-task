@@ -8,10 +8,13 @@ function App() {
     { id: 3, title: "Pen", date: new Date(2023, 2, 10), price: 1 },
     { id: 4, title: "Laptop", date: new Date(2023, 9, 17), price: 200 },
   ];
-
+  const onSaveDataNEHandler = (justData) =>{
+    const expenseData = {...justData}
+    console.log(expenseData)
+  }
   return (
     <div>
-      <NewExpense/>
+      <NewExpense onAddExpense  = {onSaveDataNEHandler}/>
       <Expenses expenses={expenses} />
     </div>
   );
